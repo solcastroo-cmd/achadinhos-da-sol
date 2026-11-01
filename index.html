@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Achadinhos da Sol</title>
+<meta name="description" content="Achadinhos que valem a pena, com preço, nota e loja conferidos antes de postar.">
+<meta property="og:title" content="Achadinhos da Sol">
+<meta property="og:description" content="Achadinhos que valem a pena, conferidos antes de postar.">
+<meta property="og:image" content="img/logo.jpg">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sol:#EE4D2D; --sol-escuro:#C93A1E; --dourado:#FFB547; --creme:#FFF7F0;
+    --texto:#2B1A14; --suave:#7A6159; --card:#FFFFFF; --borda:#F3E2D8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Poppins,system-ui,sans-serif;background:var(--creme);color:var(--texto);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .topo{background:linear-gradient(160deg,var(--sol) 0%,#F7743F 60%,var(--dourado) 140%);color:#fff;text-align:center;padding:36px 16px 70px;border-radius:0 0 32px 32px}
+  .logo{width:96px;height:96px;border-radius:50%;border:4px solid #fff;box-shadow:0 6px 20px rgba(0,0,0,.18);object-fit:cover}
+  h1{font-size:26px;font-weight:800;margin-top:12px;letter-spacing:-.3px}
+  .slogan{font-size:14px;opacity:.95;margin-top:4px}
+  .selos{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .selo{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600}
+  main{max-width:560px;margin:-48px auto 0;padding:0 16px 40px}
+  .insta{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--card);border-radius:16px;padding:14px;font-weight:600;font-size:15px;box-shadow:0 4px 14px rgba(238,77,45,.12)}
+  .filtros{display:flex;gap:8px;overflow-x:auto;margin:22px 0 14px;padding-bottom:4px;scrollbar-width:none}
+  .filtros::-webkit-scrollbar{display:none}
+  .filtro{flex:none;border:1.5px solid var(--borda);background:var(--card);color:var(--suave);border-radius:999px;padding:8px 16px;font:600 13px Poppins,sans-serif;cursor:pointer}
+  .filtro.ativo{background:var(--sol);border-color:var(--sol);color:#fff}
+  .titulo-sec{font-size:13px;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.8px;margin:6px 2px 12px}
+  .grade{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 3px 12px rgba(43,26,20,.06);display:flex;flex-direction:column;transition:transform .15s}
+  .card:active{transform:scale(.98)}
+  .card.destaque{grid-column:1/-1;flex-direction:row}
+  .foto{position:relative;aspect-ratio:1;background:#fff}
+  .card.destaque .foto{width:46%;flex:none}
+  .foto img{width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;top:8px;left:8px;background:var(--sol);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.4px}
+  .loja-mkt{position:absolute;bottom:8px;right:8px;background:#fff;color:var(--sol);font-size:10px;font-weight:700;padding:3px 7px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+  .info{padding:12px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .nome{font-size:14px;font-weight:700;line-height:1.3}
+  .card.destaque .nome{font-size:16px}
+  .beneficio{font-size:12px;color:var(--suave);line-height:1.4}
+  .nota{font-size:12px;color:var(--suave)}
+  .nota b{color:#E8A317}
+  .btn{margin-top:auto;display:block;text-align:center;background:var(--sol);color:#fff;font-weight:700;font-size:13px;padding:10px;border-radius:12px}
+  .btn:hover{background:var(--sol-escuro)}
+  .aviso{margin-top:28px;background:var(--card);border-radius:16px;padding:16px;font-size:12px;color:var(--suave);line-height:1.6}
+  .aviso b{color:var(--texto)}
+  footer{text-align:center;font-size:12px;color:var(--suave);margin-top:20px}
+  @media (max-width:340px){.card.destaque{flex-direction:column}.card.destaque .foto{width:100%}}
+</style>
+</head>
+<body>
+<header class="topo">
+  <img class="logo" src="img/logo.jpg" alt="Achadinhos da Sol">
+  <h1>Achadinhos da Sol</h1>
+  <p class="slogan">Achadinhos que valem a pena, todo dia ☀️</p>
+  <div class="selos">
+    <span class="selo">✅ Loja e nota conferidas</span>
+    <span class="selo">🔗 Link direto na loja</span>
+  </div>
+</header>
+
+<main>
+  <a class="insta" href="https://www.instagram.com/sevendigitall/" target="_blank" rel="noopener">📸 Siga no Instagram para ver os achados do dia</a>
+
+  <div class="filtros" id="filtros"></div>
+  <p class="titulo-sec" id="titulo">Todos os achadinhos</p>
+  <div class="grade" id="grade"></div>
+
+  <div class="aviso">
+    <b>Como funciona:</b> eu confiro a loja, a nota e as avaliações antes de indicar. Ao clicar, você vai direto para a página oficial do produto e vê o preço do momento.<br><br>
+    <b>Transparência:</b> sou afiliada. Posso ganhar uma comissão pelas compras feitas pelos links, sem nenhum custo extra para você. Preço, cupom e estoque podem mudar a qualquer momento.
+  </div>
+  <footer>☀️ Achadinhos da Sol · atualizado em 01/11/2026</footer>
+</main>
+
+<script>
+const produtos = [
+  {id:"kokeshi", nome:"Kit Facial Kokeshi 3 Passos", beneficio:"Rotina de skincare completa: olhos, creme gel e creme facial.", nota:"4.9", loja:"Kokeshi Oficial", cat:"Beleza", tag:"Mais amado", mkt:"Shopee", link:"https://s.shopee.com.br/114A5dDfOG", destaque:true},
+  {id:"cascata", nome:"Cascata 400 LEDs · 10 metros", beneficio:"Fachada de Natal iluminada, com 8 funções. Escolha 110V ou 220V.", nota:"4.9", loja:"Beyond", cat:"Natal", tag:"Natal", mkt:"Shopee", link:"https://s.shopee.com.br/1qdH5AJ1Bf"},
+  {id:"toalha", nome:"Toalha de Mesa de Natal 2,00×1,40", beneficio:"Mesa posta de Natal para 6 cadeiras.", nota:"4.8", loja:"Milau Baby", cat:"Natal", tag:"Natal", mkt:"Shopee", link:"https://s.shopee.com.br/1gJqsrO3JE"},
+  {id:"cortadores", nome:"Kit 8 Cortadores de Biscoito de Natal", beneficio:"Biscoitos temáticos para fazer com as crianças.", nota:"4.9", loja:"Brothers Tech 3D", cat:"Natal", mkt:"Shopee", link:"https://s.shopee.com.br/1BNaHwYkq4"},
+  {id:"alvejante", nome:"Alvejante sem Cloro Calisul", beneficio:"Percarbonato de sódio para roupas brancas, tênis e panos de prato.", nota:"4.9", loja:"Tio Chico", cat:"Casa", mkt:"Shopee", link:"https://s.shopee.com.br/1W0QgYGA8s"}
+];
+
+const grade = document.getElementById("grade"), filtros = document.getElementById("filtros"), titulo = document.getElementById("titulo");
+const cats = ["Todos", ...new Set(produtos.map(p => p.cat))];
+
+function render(cat){
+  const lista = cat === "Todos" ? produtos : produtos.filter(p => p.cat === cat);
+  titulo.textContent = cat === "Todos" ? "Todos os achadinhos" : "Achadinhos de " + cat;
+  grade.innerHTML = lista.map(p => `
+    <a class="card${p.destaque && cat === "Todos" ? " destaque" : ""}" href="${p.link}" target="_blank" rel="noopener sponsored">
+      <div class="foto">
+        <img src="img/${p.id}.jpg" alt="${p.nome}" loading="lazy">
+        ${p.tag ? `<span class="tag">${p.tag}</span>` : ""}
+        <span class="loja-mkt">${p.mkt}</span>
+      </div>
+      <div class="info">
+        <p class="nome">${p.nome}</p>
+        <p class="beneficio">${p.beneficio}</p>
+        <p class="nota"><b>★ ${p.nota}</b> · ${p.loja}</p>
+        <span class="btn">Ver preço e comprar →</span>
+      </div>
+    </a>`).join("");
+  [...filtros.children].forEach(b => b.classList.toggle("ativo", b.dataset.cat === cat));
+}
+
+filtros.innerHTML = cats.map(c => `<button class="filtro" data-cat="${c}">${c}</button>`).join("");
+filtros.addEventListener("click", e => { if (e.target.dataset.cat) render(e.target.dataset.cat); });
+render("Todos");
+</script>
+</body>
+</html>
